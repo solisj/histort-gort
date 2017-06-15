@@ -10,7 +10,7 @@ function respond() {
   var post = JSON.parse(this.postData.getDataAsString());
   var text = post.text;  
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && request.text == "helix") {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
