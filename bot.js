@@ -7,10 +7,9 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
   botRegex = /^\helix$/;
 
-  var post = JSON.parse(this.postData.getDataAsString());
-  var text = post.text;  
+  var text = request.text;  
 
-  if(request.text && request.text.indexOf("helix") !== 0) {
+  if(request.text && text.indexOf("helix") !== -1) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
