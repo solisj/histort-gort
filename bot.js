@@ -8,6 +8,7 @@ function respond() {
   botRegex = /^\helix$/;
 
   var text = request.text;  
+  var textLCase = text.toLowerCase();
 
   if(request.text && text.indexOf("helix") !== -1) {
     this.res.writeHead(200);
