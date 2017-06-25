@@ -3,24 +3,20 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
-function sendText(text) {
-  this.res.writeHead(200);
-  postMessage(text);
-  this.res.end();
-}
-
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
   botRegex = /^\helix$/;
 
   var text = request.text;  
   var textLCase = text.toLowerCase();
-  var user_id = request.user_id;
+  //var user_id = request.user_id;
 
-  if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
+  //if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
 
   if(request.text && text.indexOf("helix") !== -1) {
-    sendText("output")
+    this.res.writeHead(200);
+    postMessage("output");
+    this.res.end();
   } else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -29,19 +25,19 @@ function respond() {
   
   if (request.text && textLCase.indexOf("gort show my id") == 0) { // && (user_id == "39808536") && user_id == "35415238"  { //to obtain user ID
     if(user_id == "39808536") {
-       sendText("Your user ID is: -1/12");
+       postMessage("Your user ID is: -1/12");
        return;
     }
     else if (user_id == "35415238") {
-	sendText("Your user ID is: 0");
+	postMessage("Your user ID is: 0");
         return;
   }
     else if (user_id == "32910049") {
-	sendText("Your user ID is: 3.14159265358979");
+	postMessage("Your user ID is: 3.14159265358979");
         return;
   }
     else {
-      sendText("Your user ID is: " + user_id)
+      postMessage("Your user ID is: " + user_id)
       return;
     }
   }
