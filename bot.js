@@ -9,7 +9,7 @@ function respond() {
 
   var text = request.text;  
   var textLCase = text.toLowerCase();
-  //var user_id = request.user_id;
+  var user_id = request.user_id;
 
   //if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
 
