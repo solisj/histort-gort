@@ -25,19 +25,19 @@ function respond() {
   
   if (textLCase.indexOf("gort show my id") == 0) { // && (user_id == "39808536") && user_id == "35415238"  { //to obtain user ID
     if(user_id == "39808536") {
-       sendText("Your user ID is: -1/12");
+       postMessage("Your user ID is: -1/12");
        return;
     }
     else if (user_id == "35415238") {
-		sendText("Your user ID is: 0");
+	postMessage("Your user ID is: 0");
         return;
   }
     else if (user_id == "32910049") {
-		sendText("Your user ID is: 3.14159265358979");
+	postMessage("Your user ID is: 3.14159265358979");
         return;
   }
     else {
-      sendText("Your user ID is: " + user_id)
+      postMessage("Your user ID is: " + user_id)
       return;
     }
   }
