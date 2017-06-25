@@ -15,7 +15,7 @@ function respond() {
 
   if(request.text && text.indexOf("helix") !== -1) {
     this.res.writeHead(200);
-    postMessage("output");
+    sendText("output");
     this.res.end();
   } else {
     console.log("don't care");
@@ -25,26 +25,26 @@ function respond() {
   
   if (request.text && textLCase.indexOf("gort show my id") == 0) { // && (user_id == "39808536") && user_id == "35415238"  { //to obtain user ID
     if(user_id == "39808536") {
-       postMessage("Your user ID is: -1/12");
+       sendText("Your user ID is: -1/12");
        return;
     }
     else if (user_id == "35415238") {
-	postMessage("Your user ID is: 0");
+	sendText("Your user ID is: 0");
         return;
   }
     else if (user_id == "32910049") {
-	postMessage("Your user ID is: 3.14159265358979");
+	sendText("Your user ID is: 3.14159265358979");
         return;
   }
     else {
-      postMessage("Your user ID is: " + user_id)
+      sendText("Your user ID is: " + user_id)
       return;
     }
   }
   
 }
 
-function postMessage(output) {
+function sendText(output) {
   var botResponse, options, body, botReq;
 
   botResponse = output;
