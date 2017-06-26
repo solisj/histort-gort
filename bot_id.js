@@ -1,4 +1,4 @@
-var botId = process.env.BOT_ID;
+//var botId = process.env.BOT_ID;
 
 //var botId = "545cec4d7d9259f2783f34dce3";
 
@@ -8,9 +8,9 @@ var purpleGort = 395600;*/
 
 // DO NOT CHANGE THE LINES ABOVE
 
-function getBotId() {
+/*function getBotId() {
   return botId;
-}
+}*/
 
 /*function getBotUserId() {
   return botUserId;

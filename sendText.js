@@ -1,18 +1,36 @@
-//var botId = "545cec4d7d9259f2783f34dce3";
-//var groupId = "27486707";
-/*var botUserId = 394929;
-var purpleGort = 395600;*/
+var botID = getBotId();
 
-// DO NOT CHANGE THE LINES ABOVE
+function sendText(output) {
+  var botResponse, options, body, botReq;
 
-/*function getBotId() {
-  return botId;
+  botResponse = output;
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
 }
-
-function getBotUserId() {
-  return botUserId;
-}
-
-function getPurpleGort() {
-  return purpleGort;
-}*/
