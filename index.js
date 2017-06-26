@@ -29,5 +29,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm HELIX. gg ez");
+  this.res.end("I AM EITHER GORT OR TEST GORT. TOO LAZY TO SET UP TWO DIFFERENT MESSAGES");
 }
