@@ -25,6 +25,12 @@ function respond() {
 
   if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
 
+  if (containsGort(name)) {
+    sendText("No, fuck you");
+    sendText("Change your nickname");
+    return;
+  }
+
   if(request.text && text.indexOf("helix") !== -1) {
     this.res.writeHead(200);
     sendText("output");
@@ -52,7 +58,7 @@ function respond() {
       sendText("Your user ID is: " + user_id)
       return;
     }
-  }
+  }  
 
 }
 
