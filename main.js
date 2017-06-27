@@ -1,6 +1,12 @@
 function getBotId() {
   return process.env.BOT_ID;
 }
+function getBotUserId() {
+  return process.env.BOT_USER_ID;
+}
+function getPurpleGort() {
+  return process.env.PURPLE_GORT;
+}
 
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
@@ -11,11 +17,11 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
   botRegex = /^\helix$/;
 
-  var text = request.text;  
+  var text = request.text;
   var textLCase = text.toLowerCase();
   var user_id = request.user_id;
 
-  //if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
+  if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
 
   if(request.text && text.indexOf("helix") !== -1) {
     this.res.writeHead(200);
@@ -26,7 +32,7 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
-  
+
   if (request.text && textLCase.indexOf("gort show my id") == 0) { // && (user_id == "39808536") && user_id == "35415238"  { //to obtain user ID
     if(user_id == "39808536") {
        sendText("Your user ID is: -1/12");
@@ -45,7 +51,7 @@ function respond() {
       return;
     }
   }
-  
+
 }
 
 function sendText(output) {
