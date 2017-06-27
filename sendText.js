@@ -1,4 +1,5 @@
 var botID = getBotId();
+var HTTPS = require('https');
 
 function sendText(output) {
   var botResponse, options, body, botReq;
