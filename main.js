@@ -21,6 +21,8 @@ function respond() {
   var textLCase = text.toLowerCase();
   var user_id = request.user_id;
 
+  sendText(getBotUserId());
+
   if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
 
   if(request.text && text.indexOf("helix") !== -1) {
