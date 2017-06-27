@@ -1,7 +1,7 @@
 var botID = getBotId();
 var HTTPS = require('https');
 
-function sendText(output) {
+/*function sendText(output) {
   var botResponse, options, body, botReq;
 
   botResponse = output;
@@ -34,4 +34,4 @@ function sendText(output) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
-}
+}*/
