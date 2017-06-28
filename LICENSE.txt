@@ -1,3 +1,9 @@
+The "accent remover.js" file located in the root of this repository is licensed
+under Apache 2.0. Further information can be found in the file itself.
+
+The remainder of this repository is licensed under MIT. A copy of the file is
+located below.
+
 MIT License
 
 Copyright (c) 2017 Jesus Solis
