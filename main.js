@@ -20,7 +20,7 @@ function respond() {
   var text = request.text;
   var textLCase = text.toLowerCase();
   var user_id = request.user_id;
-  var name = request.name;
+  //var name = request.name;
 
   //sendText(getBotUserId());
 
