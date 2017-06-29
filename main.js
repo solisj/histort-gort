@@ -1,17 +1,20 @@
+var botID = process.env.BOT_ID;
+var botUserID = process.env.BOT_USER_ID;
+var purpleGort = process.env.PURPLE_GORT;
+
 function getBotId() {
-  return process.env.BOT_ID;
+  return botID;
 }
 function getBotUserId() {
-  return process.env.BOT_USER_ID;
+  return botUserID;
 }
 function getPurpleGort() {
-  return process.env.PURPLE_GORT;
+  return purpleGort;
 }
 
 var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
+//var cool = require('cool-ascii-faces');
 //var botID = process.env.BOT_ID;
-var botID = getBotId();
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
