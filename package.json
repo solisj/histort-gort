@@ -1,6 +1,6 @@
 {
   "name": "gort",
-  "version": "1.0.0-beta.15",
+  "version": "1.0.0-beta.16",
   "description": "Bot code for GroupMe chat.",
   "main": "index.js",
   "scripts": {
