@@ -66,7 +66,7 @@ function respond() {
     }
   }
 
-  if (text == "gort show script links" && botID == "ce2ae93a1b6cfb12e6bc5da4d7") { // to see script links in testing room
+  if (text == "gort show script links" && botID == "90969458e7e3fefc332bfd5321") { // to see script links in testing room
 		sendText("https://github.com/solisj/histort-gort");
 		sendText("Always edit the beta first! The beta version can be tested here and won't be deployed in the main group");
         return;
