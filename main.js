@@ -29,7 +29,7 @@ function respond() {
 
   if (user_id == 0 || user_id == getBotUserId() || user_id == getPurpleGort()) return; // 0 is GroupMe's user id
 
-  sendText("hi");
+  //sendText("hi");
 
   /*if (containsGort(name)) {
     sendText("No, fuck you");
