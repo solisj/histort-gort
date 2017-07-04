@@ -76,24 +76,21 @@ function respond() {
 
   function urbanDefine(word) {
     completeUrl = baseUrl + word;
-    fetch(completeUrl)
-    .then((response) => response.json()) // Transform the data into json
-    .then(function(response) {
-    if (response.result_type == "no_results") {
-      sendText("no definition found. such sad. very disappoint");
-      return;
+    var post = fetch(completeUrl);
+    var e = post.json();
+    if (e["result_type"] == "no_results") {
+      return "no definition found. such sad. very disappoint";
     }
     else {
-      urbanDefinition = response.list[0].definition;
-      sendText(urbanDefinition);
-      return;
+      urbanDefinition = e["list"][0]["definition"];
+      return urbanDefinition;
     }
     })
   }
 
   if (text.substr(0,"gort define ".length) == "gort define " && text !== "gort define ") {
     var word = text.substr("gort define ".length);
-    urbanDefine(word);
+    sendText(urbanDefine(word));
     return;
   }
 
