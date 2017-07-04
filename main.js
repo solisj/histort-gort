@@ -91,6 +91,7 @@ function respond() {
   if (text.substr(0,"gort define ".length) == "gort define " && text !== "gort define ") {
     var word = text.substr("gort define ".length);
     sendText(urbanDefine(word));
+    sendText("text");
     return;
   }
 
