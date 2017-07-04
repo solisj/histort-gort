@@ -72,6 +72,31 @@ function respond() {
         return;
 	}
 
+  var baseUrl = "http://api.urbandictionary.com/v0/define?term="
+
+  function urbanDefine(word) {
+    completeUrl = baseUrl + word;
+    fetch(completeUrl)
+    .then((response) => response.json()) // Transform the data into json
+    .then(function(response) {
+    if (response.result_type == "no_results") {
+      sendText("no definition found. such sad. very disappoint");
+      return;
+    }
+    else {
+      urbanDefinition = response.list[0].definition;
+      sendText(urbanDefinition);
+      return;
+    }
+    })
+  }
+
+  if (text.substr(0,"gort define ".length) == "gort define " && text !== "gort define ") {
+    var word = text.substr("gort define ".length);
+    urbanDefine(word);
+    return;
+  }
+
 }
 
 function sendText(output) {
